@@ -1,0 +1,49 @@
+Create new user
+
+mutation {
+  createUser(password: "Divanshu", email: "dijoshi@gammastack.com", username: "divanshu_89") {
+    user {
+      email,
+      username
+    }
+  }
+}
+
+Retrieving all allusers 
+
+{
+  allUsers {
+    edges {
+      node {
+        email,
+        username
+        password
+      }
+    }
+  }
+}
+
+Token Generation Mutation
+mutation{
+    auth(username:"divanshu_89",password:"passsword"){
+            accessToken
+            refreshToken
+    }
+}
+
+Mutation to generate a store using jwt authentication
+mutation{
+  protectedCreateStore(userId:1,name:"furniture",token:"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0eXBlIjoiYWNjZXNzIiwiaWF0IjoxNjE3OTQ2NjI1LCJuYmYiOjE2MTc5NDY2MjUsImp0aSI6IjY3MmRjYzM1LWE1OTEtNGM4Yi1iYWJkLTMwYjU5OGM2YmM1YiIsImlkZW50aXR5IjoiZGl2YW5zaHVfODkiLCJleHAiOjE2MTc5NDc1MjV9.jQC6wckGGG2KRQk84scVzLcxlNFY-LhUFFcxXsZdTbk"){
+    store{
+      __typename
+      ... on StoreObject{
+        name
+        userId
+      }
+      __typename
+      ... on AuthInfoField{
+        message
+      }
+    }
+  }
+}
