@@ -47,3 +47,11 @@ mutation{
     }
   }
 }
+
+Mutation to get a new token as token is only usable for 15 minutes
+
+mutation{
+  refresh(refreshToken:"passrefreshtoken"){
+    newToken
+  }
+}
