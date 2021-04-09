@@ -1,5 +1,5 @@
 # Python-Flask & Graphene-SQLAlchemy(GraphQL) & Flask-GraphQL-Auth(JWTAuthentication) Project
-This is an example project for using GraphQL with Flask using Graphene-SQLAlchemy.
+
 
 ## Installing Requirements
 Use Virtualenv and install the packages.
