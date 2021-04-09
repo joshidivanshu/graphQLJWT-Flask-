@@ -10,6 +10,7 @@ db_session = scoped_session(sessionmaker(autocommit=False,
 Base = declarative_base()
 Base.query = db_session.query_property()
 
+
 class User(Base):
     __tablename__ = 'users'
     id = Column(Integer, primary_key=True)
@@ -24,4 +25,5 @@ class Store(Base):
     name = Column(String(20),unique=True,nullable=False)
     user_id = Column(Integer,ForeignKey('users.id'))
 
+#this creates the tables inside the database and only once.
 Base.metadata.create_all(engine)    
