@@ -18,6 +18,11 @@ from flask_graphql_auth import (
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'divanshu'
 app.config["JWT_SECRET_KEY"] = "divanshu"
+#  datetime.timedelta & defaults to 15 minutes. 
+# app.conifg["JWT_ACCESS_TOKEN_EXPIRES"] 
+# datetime.timedelta and defaults to 30 days. 
+# Can be set to False to disable expiration.
+# app.conifg["JWT_REFRESH_TOKEN_EXPIRES"] 
 auth = GraphQLAuth(app)
 
 @app.route('/')

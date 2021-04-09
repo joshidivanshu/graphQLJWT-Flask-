@@ -12,16 +12,17 @@ from flask_graphql_auth import (
     mutation_jwt_required
 )
 
+
 class UserObject(SQLAlchemyObjectType):
    class Meta:
        model = User
        interfaces = (graphene.relay.Node, )
 
+
 class StoreObject(SQLAlchemyObjectType):
     class Meta:
         model = Store
         interfaces = (graphene.relay.Node,)
-
 
 
 class CreateUser(graphene.Mutation):
@@ -51,7 +52,6 @@ class ProtectedStore(graphene.Union):
 class Query(graphene.ObjectType):
     node = graphene.relay.Node.Field()
 
-
     all_users = SQLAlchemyConnectionField(UserObject)
     all_stores = SQLAlchemyConnectionField(StoreObject)
     get_store = graphene.Field(type=ProtectedStore, token=graphene.String(),id=graphene.Int())
@@ -62,9 +62,6 @@ class Query(graphene.ObjectType):
         store_qry = StoreObject.get_query(info)
         storeval = store_qry.filter(Store.id.contains(id)).first()
         return storeval
-
-
-
 
 
 class AuthMutation(graphene.Mutation):
@@ -101,6 +98,7 @@ class CreateStore(graphene.Mutation):
             db_session.add(store)
             db_session.commit()
         return CreateStore(store=store)
+
 
 class RefreshMutation(graphene.Mutation):
     class Arguments(object):
