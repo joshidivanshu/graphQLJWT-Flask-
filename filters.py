@@ -4,9 +4,6 @@ from graphene_sqlalchemy_filter import FilterSet, FilterableConnectionField
 from database import User
 
 
-
-
-
 class UserFilter(FilterSet):
     is_admin = graphene.Boolean(description='username = admin')
 
