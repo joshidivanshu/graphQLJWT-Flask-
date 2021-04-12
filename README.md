@@ -22,7 +22,7 @@ engine = create_engine('mysql://root:password@localhost/db_name', convert_unicod
 
 ```
 ## Testing GraphQL
-Go to http://localhost:5000/graphql to try GraphQL. 
+Go to http://localhost:5000/graphql to try use queries & mutations 
 
 ```
 for testing queries and mutations please check the query format mentioned in queries.txt
