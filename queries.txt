@@ -48,6 +48,40 @@ mutation{
   }
 }
 
+Query to get all the stores
+
+query{
+  allStores{
+    edges{
+      node{
+        userId
+        name
+      }
+    }
+  }
+}
+
+Query to get the all the store associated with a particular user 
+
+query{
+  allUsers{
+    edges{
+      node{
+        username
+        email
+        stores {
+          edges {
+            node {
+              id
+              name
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 Mutation to get a new token as token is only usable for 15 minutes
 
 mutation{

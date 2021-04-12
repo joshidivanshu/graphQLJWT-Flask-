@@ -51,7 +51,7 @@ class ProtectedStore(graphene.Union):
 
 class Query(graphene.ObjectType):
     node = graphene.relay.Node.Field()
-
+    
     all_users = SQLAlchemyConnectionField(UserObject)
     all_stores = SQLAlchemyConnectionField(StoreObject)
     get_store = graphene.Field(type=ProtectedStore, token=graphene.String(),id=graphene.Int())
@@ -62,6 +62,13 @@ class Query(graphene.ObjectType):
         store_qry = StoreObject.get_query(info)
         storeval = store_qry.filter(Store.id.contains(id)).first()
         return storeval
+
+    # def resolve_all_users(self, info, filters=None):
+    #     query = User.query
+    #     if filters is not None:
+    #         query = UserFilter.filter(info, query, filters)
+
+    #     return query        
 
 
 class AuthMutation(graphene.Mutation):
