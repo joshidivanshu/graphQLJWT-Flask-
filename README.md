@@ -6,7 +6,7 @@ Use Virtualenv and install the packages.
 ```
 pip install -r requirements.txt
 ```
-## Running Flask Server
+## Running Flask Server2
 Go to the root dir and run the below line in the terminal.
 ```
 python app.py
