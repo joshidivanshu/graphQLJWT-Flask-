@@ -1,4 +1,4 @@
-# Python-Flask & Graphene-SQLAlchemy(GraphQL) & Flask-GraphQL-Auth(JWTAuthentication) Project
+# Python-Flask & Graphene-SQLAlchemy(GraphQL) & Flask-GraphQL-Auth(JWTAuthentication) Example Project
 
 
 ## Installing Requirements
