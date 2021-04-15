@@ -32,3 +32,8 @@ for testing queries and mutations please check the query format mentioned in que
 check Flask-GraphQL-Auth documentation for more information on JWT Authentication used in the project.
 
 ```
+
+## Project Snapshots
+
+![Screenshot from 2021-04-15 14-39-34](https://user-images.githubusercontent.com/32302492/114844546-87c1b000-9df8-11eb-9134-002231235c80.png)
+![Screenshot from 2021-04-15 14-39-19](https://user-images.githubusercontent.com/32302492/114844562-8c866400-9df8-11eb-882f-58b0c77592f2.png)
